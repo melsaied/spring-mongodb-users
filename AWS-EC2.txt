@@ -1,0 +1,7 @@
+https://microservices-demo-bucket.s3.amazonaws.com/spring-mongodb-0.0.1-SNAPSHOT.jar
+ssh -i "EC2-spring-mongodb-users.pem" ubuntu@ec2-3-83-202-104.compute-1.amazonaws.com
+sudo apt update
+sudo apt-get install default-jre
+wget https://microservices-demo-bucket.s3.amazonaws.com/spring-mongodb-0.0.1-SNAPSHOT.jar
+java -jar spring-mongodb-0.0.1-SNAPSHOT.jar
+ec2-3-83-202-104.compute-1.amazonaws.com:8080/user/all
