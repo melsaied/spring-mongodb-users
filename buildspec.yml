@@ -51,7 +51,7 @@ artifacts:
   files:
     - echo Entered the artifacts phase...
 #    - target/messageUtil-1.0.jar
-#    - deploy/**/*
+    - deploy/**/*
 #  discard-paths: yes
 #  secondary-artifacts:
 #    artifact1:
