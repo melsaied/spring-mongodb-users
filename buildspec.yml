@@ -13,13 +13,13 @@ phases:
 #      - apt-get update -y
 #      - apt-get install -y maven
     finally:
-      - echo Completed  the install phase...
+      - echo This always runs even if the update or install command fails
   pre_build:
     commands:
       - echo Entered the pre_build phase...
 #      - docker login -u User -p $LOGIN_PASSWORD
     finally:
-      - echo Completed  the pre_build phase...
+      - echo This always runs even if the login command fails
   build:
     commands:
       - echo Entered the build phase...
@@ -27,14 +27,12 @@ phases:
 #      - mvn install
       - mvn clean prepare-package war:exploded
     finally:
-      - echo Completed  the build phase...
+      - echo This always runs even if the install command fails
   post_build:
     commands:
       - echo Entered the post_build phase...
       - echo Build completed on `date`
       - mv target/deploy ./
-    finally:
-      - echo Completed  the post_build phase...
 
 #reports:
 #  arn:aws:codebuild:your-region:your-aws-account-id:report-group/report-group-name-1:
@@ -49,7 +47,6 @@ phases:
 #    file-format: CUCUMBERJSON # default is JUNITXML
 artifacts:
   files:
-    - echo Entered the artifacts phase...
 #    - target/messageUtil-1.0.jar
     - deploy/**/*
 #  discard-paths: yes
@@ -65,4 +62,3 @@ artifacts:
 #cache:
 #  paths:
 #    - '/root/.m2/**/*'
-  - echo Completed  the artifacts phase....
