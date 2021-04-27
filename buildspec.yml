@@ -64,5 +64,3 @@ artifacts:
 #cache:
 #  paths:
 #    - '/root/.m2/**/*'
-
-      - echo Copleted the artifacts phase---
