@@ -49,6 +49,7 @@ phases:
 #    file-format: CUCUMBERJSON # default is JUNITXML
 artifacts:
   files:
+    - echo Deploying now ------------------------------------------------
 #    - target/messageUtil-1.0.jar
     - deploy/**/*
 #  discard-paths: yes
