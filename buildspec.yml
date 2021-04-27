@@ -13,13 +13,13 @@ phases:
 #      - apt-get update -y
 #      - apt-get install -y maven
     finally:
-      - echo This always runs even if the update or install command fails
+      - echo Copleted the install phase---
   pre_build:
     commands:
       - echo Entered the pre_build phase...
 #      - docker login -u User -p $LOGIN_PASSWORD
     finally:
-      - echo This always runs even if the login command fails
+      - echo Copleted the pre_build phase---
   build:
     commands:
       - echo Entered the build phase...
@@ -27,12 +27,14 @@ phases:
 #      - mvn install
       - mvn clean prepare-package war:exploded
     finally:
-      - echo This always runs even if the install command fails
+      - echo Copleted the build phase---
   post_build:
     commands:
       - echo Entered the post_build phase...
       - echo Build completed on `date`
       - mv target/deploy ./
+    finally:
+      - echo Copleted the post_build phase---
 
 #reports:
 #  arn:aws:codebuild:your-region:your-aws-account-id:report-group/report-group-name-1:
@@ -62,3 +64,5 @@ artifacts:
 #cache:
 #  paths:
 #    - '/root/.m2/**/*'
+
+      - echo Copleted the artifacts phase---
