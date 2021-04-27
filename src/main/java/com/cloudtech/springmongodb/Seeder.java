@@ -17,7 +17,7 @@ public class Seeder implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         List<User> list = Arrays.asList(
-                new User("firstName0", "lastName0", "email0", "password0", Arrays.asList(
+                new User("AfirstName0", "lastName0", "email0", "password0", Arrays.asList(
                         new Course("CourseName0", 123l),
                         new Course("CourseName1", 234l),
                         new Course("CourseName2", 345l))),
